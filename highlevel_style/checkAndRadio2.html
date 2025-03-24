@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        appearance: none;
+      }
+      input[type="checkbox"] {
+        position: relative;
+        width: 1em;
+        height: 1em;
+        border: 2px solid rgb(255, 217, 0);
+        vertical-align: -2.5px;
+        color: green;
+      }
+      input[type="checkbox"]::before {
+        content: "✔";
+        position: absolute;
+        top: -8px;
+        font-size: 1.2em;
+        visibility: hidden;
+      }
+      input[type="checkbox"]:checked:before {
+        visibility: visible;
+      }
+      input[type="checkbox"]:disabled {
+        background-color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Fruit preferences</legend>
+
+        <p>
+          <label>
+            <input type="checkbox" name="fruit" value="cherry" />
+            I like cherry
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="fruit" value="banana" disabled />
+            I can't like banana
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="fruit" value="strawberry" />
+            I like strawberry
+          </label>
+        </p>
+      </fieldset>
+    </form>
+  </body>
+</html>

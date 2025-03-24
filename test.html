@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="image" src="./image.png" alt="" />
+    <input type="text" disabled placeholder="禁用" />
+    <input type="text" />
+    <input type="text" />
+    <input type="search" name="" id="" autofocus />
+    <input type="url" id="url" name="url" />
+    <input type="number" name="" id="" min="1" max="1000" step="0.01" />
+    <p></p>
+    <label for="price">选择你能接受的最大价格</label>
+    <input
+      type="range"
+      id="price"
+      min="5000"
+      max="50000"
+      step="100"
+      value="25000"
+    />
+    <output class="price-output" for="price"></output>
+    <p></p>
+    <input
+      type="datetime-local"
+      name=""
+      id=""
+      min="1900-01-01"
+      max="2024-12-30"
+    />
+    <input type="month" name="" id="" />
+    <input type="time" name="" id="" />
+    <input type="week" name="" id="" />
+    <label for="myDate">When are you available this summer?</label>
+    <input
+      type="date"
+      name="myDate"
+      min="2013-06-01"
+      max="2013-08-31"
+      step="7"
+      id="myDate"
+    />
+    <input type="color" name="color" id="color" />
+    <progress max="100" value="75" id="progress">5/100</progress>
+    <label for="progress"></label>
+    <script>
+      const range = document.querySelector('[type="range"]');
+      const output = document.querySelector(".price-output");
+      output.innerText = range.value;
+      range.addEventListener("input", () => {
+        output.innerText = range.value;
+      });
+
+      const progress = document.querySelector("progress");
+      const pro_label = progress.nextElementSibling;
+      setInterval(() => {
+        progress.value++;
+        progress.innerText = `${progress.value}/100`;
+        pro_label.innerText = `${progress.value}/100`;
+        if (progress.value === 100) {
+          progress.value = 1;
+        }
+      }, 100);
+    </script>
+  </body>
+</html>

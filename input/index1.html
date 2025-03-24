@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input,
+      button,
+      select,
+      range {
+        display: block;
+        box-sizing: border-box;
+        border: none;
+        border: 1px solid silver;
+        background-color: rgb(198, 198, 198);
+        margin: 10px;
+      }
+      input[type="image"] {
+        width: 100px;
+        /* position: relative; */
+      }
+      /* input[type="image"]::after {
+        content: "点击";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 100px;
+      } */
+
+      #search {
+        width: 100px;
+      }
+      .search-content {
+        font-size: 20px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <input type="email" name="email" id="email" value="a@b" />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="格式：a@b"
+        multiple
+      />
+      <input type="search" name="search" id="search" />
+      <label for="search" class="search-content">搜索内容：<span></span></label>
+      <input type="url" name="url" id="url" />
+      <input
+        type="number"
+        name="number"
+        id="number"
+        min="1"
+        max="100"
+        value="1"
+        step="0.1"
+      />
+      <label for="range">选择价格</label>
+      <input
+        type="range"
+        name="range"
+        id="range"
+        min="100"
+        max="5000"
+        step="100"
+        value="100"
+      />
+      <output for="range"></output>
+      <input type="image" src="./pink-button-7330117_1920.png" alt="" />
+    </form>
+    <script>
+      const range = document.querySelector("#range");
+      const output = document.querySelector("output");
+      output.innerText = range.value;
+      range.addEventListener("input", () => {
+        output.innerText = range.value;
+      });
+      const search = document.querySelector("#search");
+      search.addEventListener("input", () => {
+        search.nextElementSibling.innerText = `搜索内容：${search.value}`;
+      });
+    </script>
+  </body>
+</html>

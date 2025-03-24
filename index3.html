@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      div {
+        width: 100px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      label {
+        position: relative;
+      }
+      span {
+        position: absolute;
+      }
+      input {
+        appearance: none;
+        width: 44px;
+        height: 24px;
+        border-radius: 12px;
+        border: 2px solid black;
+        background: #eee;
+        transition: all 0.4s;
+      }
+      input[type="checkbox"]:checked {
+        background-color: #ffaa00;
+        transition: all 0.4s;
+      }
+      input[type="checkbox"] ~ label .on,
+      input[type="checkbox"]:checked ~ label .off {
+        opacity: 0;
+      }
+
+      input[type="checkbox"] ~ label .off,
+      input[type="checkbox"]:checked ~ label .on {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="checkbox" name="on or off" id="checkbox" />
+      <label for="checkbox">
+        <span class="on">On</span> <span class="off">Off</span>
+      </label>
+    </div>
+  </body>
+</html>

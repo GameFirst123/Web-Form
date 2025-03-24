@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "AAtypewriter";
+        src: url("fonts/AAtypewriter.woff2") format("woff2"),
+          url("fonts/AAtypewriter.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Wotham";
+        src: url("fonts/Wotham.woff2") format("woff2"),
+          url("fonts/Wotham.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      button,
+      input,
+      textarea {
+        box-sizing: border-box;
+        font-family: inherit;
+        margin: 0;
+        padding: 0;
+        border: none;
+        resize: vertical;
+        background: none;
+      }
+      body {
+        background-color: #333;
+      }
+      form {
+        background: url("./image.png");
+        width: 740px;
+        height: 498px;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 3em 3em 1fr;
+        row-gap: 10px;
+        column-gap: 50px;
+      }
+      .message {
+        grid-area: 1/1/5/2;
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        font-family: "AAtypewriter", sans-serif;
+        font-size: 1.4em;
+      }
+      .message label {
+        margin: 20px 0;
+      }
+      .message textarea {
+        height: 60%;
+      }
+      h1 {
+        padding-top: 140px;
+        font-family: "Wotham", sans-serif;
+      }
+      .from {
+        font-family: "AAtypewriter", sans-serif;
+        font-size: 1.2em;
+      }
+      .to {
+        display: flex;
+        font-family: "AAtypewriter", sans-serif;
+        font-size: 1.2em;
+      }
+      .to label {
+        display: block;
+        width: 3em;
+      }
+      .to input {
+        width: 200px;
+        height: 2em;
+      }
+      .from input {
+        width: 200px;
+        height: 2em;
+      }
+      .send button {
+        border: 2px solid;
+        border-radius: 5px;
+        padding: 5px;
+        transform: rotate(-2deg);
+        font-weight: bold;
+      }
+      .send button::after {
+        content: ">>>";
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <h1>to:Recipient</h1>
+      <div class="message">
+        <label for="textarea">Your message: </label>
+        <textarea name="textarea" id="textarea"></textarea>
+      </div>
+      <div class="from">
+        <label for="email1">from: </label>
+        <input type="email" name="email1" id="email1" />
+      </div>
+      <div class="to">
+        <label for="email2">to: </label>
+        <input type="email" name="email2" id="email2" />
+      </div>
+      <div class="send">
+        <button>Send your message</button>
+      </div>
+    </form>
+  </body>
+</html>

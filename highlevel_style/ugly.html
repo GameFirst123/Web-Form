@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "Louis-George-Cafe-Bold";
+        src: url("fonts/Louis-George-Cafe-Bold.woff2") format("woff2"),
+          url("fonts/Louis-George-Cafe-Bold.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "aaaa";
+        src: url("fonts/aaaa.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      form {
+        width: 200px;
+        margin: 0 auto;
+      }
+      button,
+      select,
+      input,
+      progress,
+      meter {
+        display: block;
+        width: 200px;
+        margin: 10px 0;
+        font-family: "Louis-George-Cafe-Bold";
+        appearance: none;
+        border-radius: 5px;
+      }
+      .select {
+        width: 200px;
+        height: 100%;
+        position: relative;
+      }
+      .select::after {
+        content: "▼";
+        color: white;
+        background-color: black;
+        font-size: 0.8rem;
+        top: 32px;
+        right: 5px;
+        position: absolute;
+      }
+      input[type="text"],
+      input[type="datetime-local"],
+      input[type="color"],
+      select {
+        box-shadow: inset 1px 1px 3px #ccc;
+        border-radius: 5px;
+      }
+      label {
+        margin-bottom: 5px;
+      }
+
+      button {
+        width: 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <div class="select">
+        <label for="select">Select box: </label>
+        <select name="select" id="select">
+          <option>Banana</option>
+          <option>Cherry</option>
+          <option>Lemon</option>
+        </select>
+      </div>
+
+      <label for="datetime">Datetime local: </label>
+      <input type="datetime-local" name="datetime" id="datetime" />
+
+      <label for="range">Range: </label>
+      <input type="range" name="datetime" id="range" />
+
+      <label for="color">Color: </label>
+      <input type="color" name="color" id="color" />
+
+      <label for="file">File picker: </label>
+      <input type="file" name="file" id="file" />
+
+      <label for="progress">Progress: </label>
+      <progress id="progress" max="100" value="75"></progress>
+
+      <label for="meter">Meter: </label>
+      <meter value=""></meter>
+
+      <button>Submit?</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button,
+      input,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: 100%;
+        width: 150px;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        width: auto;
+      }
+      fieldset {
+        width: 200px;
+        position: relative;
+      }
+      fieldset ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      fieldset ul li {
+        padding-left: 20px;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+      }
+      fieldset legend {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 3em;
+        text-align: center;
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <label for="">text</label>
+      <input type="text" name="text" id="text" />
+      <label for="">text</label>
+      <input type="text" name="text" id="text" />
+      <label for="">text</label>
+      <input type="text" name="text" id="text" />
+      <label for="">text</label>
+      <input type="radio" name="text" id="radio" />
+      <fieldset>
+        <legend>图例</legend>
+        <ul>
+          <li>
+            <label for="c1">选项一：</label>
+            <input type="checkbox" name="c" id="c1" />
+          </li>
+          <li>
+            <label for="c2">选项二：</label>
+            <input type="checkbox" name="c" id="c2" />
+          </li>
+          <li>
+            <label for="c3">选项三：</label>
+            <input type="checkbox" name="c" id="c3" />
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+  </body>
+</html>

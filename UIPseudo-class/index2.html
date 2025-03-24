@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "aaaa";
+        src: url("aaaa.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        font-family: "aaaa", sans-serif;
+        margin: 20px auto;
+        max-width: 460px;
+      }
+      fieldset {
+        padding: 10px 30px 0;
+      }
+      legend {
+        color: white;
+        background-color: black;
+        padding: 5px 10px;
+      }
+      fieldset > div {
+        margin-bottom: 20px;
+        display: flex;
+        flex-flow: row wrap;
+      }
+      button,
+      input,
+      label {
+        display: block;
+        font-family: inherit;
+        font-size: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 30px;
+        padding: 5px;
+      }
+      input {
+        box-shadow: inset 1px 1px 3px #ccc;
+        border-radius: 5px;
+      }
+      input:hover,
+      input:focus {
+        background-color: #eee;
+      }
+      input + span {
+        position: relative;
+      }
+      input:required + span::after {
+        position: absolute;
+        content: "required";
+        color: white;
+        background-color: black;
+        padding: 5px 10px;
+        top: -26px;
+        left: -70px;
+        font-size: 0.7em;
+      }
+      input + span::before {
+        position: absolute;
+        right: -20px;
+        top: 5px;
+      }
+      input:invalid {
+        border: 2px solid red;
+      }
+      input:invalid + span::before {
+        content: "✖";
+        color: red;
+      }
+      input:valid + span::before {
+        content: "✓";
+        color: green;
+      }
+      button {
+        margin: 0 auto;
+        width: 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Feedback form</legend>
+
+        <p>Required fields are labelled with "required".</p>
+        <div>
+          <label for="fname">First name: </label>
+          <input id="fname" name="fname" type="text" required />
+          <span></span>
+        </div>
+        <div>
+          <label for="lname">Last name: </label>
+          <input id="lname" name="lname" type="text" required />
+          <span></span>
+        </div>
+        <div>
+          <label for="email"
+            >Email address (include if you want a response):
+          </label>
+          <input id="email" name="email" type="email" />
+          <span></span>
+        </div>
+        <div><button>Submit</button></div>
+      </fieldset>
+    </form>
+  </body>
+</html>

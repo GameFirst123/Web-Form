@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <textarea name="textarea" id="textarea" cols="30" rows="8">
+默认值</textarea
+      >
+      <textarea
+        name="textarea2"
+        id="textarea2"
+        cols="30"
+        rows="10"
+        placeholder="提示词"
+      ></textarea>
+      <textarea name="textarea3" id="textarea3" cols="30" rows="10">
+<p>纯文本显示，innerText</p></textarea
+      >
+      <textarea name="" id="" wrap="off">不能换行</textarea>
+      <select name="select" id="select">
+        <optgroup label="第一组">
+          <option value="a1">a1</option>
+          <option value="a2" selected>a2</option>
+          <option value="a3">a3</option>
+          <option value="a4">a4</option>
+        </optgroup>
+
+        <optgroup label="第二组">
+          <option value="b1">b1b1b1b1</option>
+          <option value="b2">b2b2b2b2</option>
+          <option value="b3">b3b3b3b3</option>
+          <option value="b4">b4b4b4b4</option>
+        </optgroup>
+      </select>
+      <select name="select" id="select" multiple>
+        <optgroup label="第一组">
+          <option value="a1">a1</option>
+          <option value="a2">a2</option>
+          <option value="a3">a3</option>
+          <option value="a4">a4</option>
+        </optgroup>
+
+        <optgroup label="第二组">
+          <option value="b1">b1b1b1b1</option>
+          <option value="b2">b2b2b2b2</option>
+          <option value="b3">b3b3b3b3</option>
+          <option value="b4">b4b4b4b4</option>
+        </optgroup>
+      </select>
+      <output></output>
+
+      <button>提交</button>
+    </form>
+    <script>
+      // const multiple_select = document.querySelector("select[multiple]");
+      // const output = document.querySelector("output");
+      // // console.log(multiple_select);
+
+      // multiple_select.addEventListener("input", () => {
+      //   const arr = [];
+      //   const groups = multiple_select.children;
+      //   for (const item of groups) {
+      //     const options = item.children;
+      //     // console.log(options);
+      //     for (const opt of options) {
+      //       // console.log(opt);
+      //       // console.log(opt.innerHTML);
+      //       if (opt.selected) {
+      //         arr.push(opt.innerText);
+      //       }
+      //     }
+      //   }
+      //   output.innerText = `已选择：${arr.join(", ")}`;
+      // });
+
+      const multiple_select = document.querySelector("select[multiple]");
+      const output = document.querySelector("output");
+
+      multiple_select.addEventListener("input", () => {
+        const selectedOptions =
+          multiple_select.querySelectorAll("option:checked");
+        const arr = Array.from(selectedOptions).map((opt) => opt.innerText);
+        output.innerText = `已选择：${arr.join(", ")}`;
+      });
+    </script>
+  </body>
+</html>

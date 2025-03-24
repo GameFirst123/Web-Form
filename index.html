@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+      }
+      .left {
+        background-color: #106464;
+        flex: 1;
+      }
+      .right {
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(120, 22, 62);
+      }
+      form {
+        box-sizing: border-box;
+        width: 80%;
+        border: 1px solid;
+        background-color: rgb(72, 72, 72);
+        color: white;
+      }
+      form ul {
+        list-style: none;
+        padding: 0;
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0;
+      }
+      li {
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+      }
+      li label {
+        width: 5em;
+        text-align: left;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        font: 1em sans-serif;
+        width: 200px;
+        box-sizing: border-box;
+        border: 1px solid #ff1919;
+      }
+      input:focus,
+      textarea:focus {
+        border-color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left"></div>
+      <div class="right">
+        <form action="/my-handling-form-page" method="post">
+          <ul>
+            <li>
+              <label for="name">Name: <span aria-label="必须">*</span></label>
+              <input type="text" id="name" name="user_name" />
+            </li>
+            <li>
+              <label for="mail">E-mail: </label>
+              <input type="email" name="user_email" id="mail" />
+            </li>
+            <li>
+              <label for="msg">Massage: </label>
+              <textarea name="user_message" id="msg"></textarea>
+            </li>
+            <li>
+              <label for="checkbox">多选框：</label>
+              <input type="checkbox" name="user_checkbox" id="checkbox" />
+              <input type="checkbox" name="user_checkbox" id="checkbox" />
+              <input type="checkbox" name="user_checkbox" id="checkbox" />
+              <input type="checkbox" name="user_checkbox" id="checkbox" />
+            </li>
+            <li>
+              <fieldset>
+                <legend>单选框</legend>
+                <p>
+                  <input type="radio" name="c" id="c1" />
+                  <label for="c1">第一项</label>
+                </p>
+                <p>
+                  <input type="radio" name="c" id="c2" />
+                  <label for="c2">第二项</label>
+                </p>
+
+                <p>
+                  <input type="radio" name="c" id="c3" />
+                  <label for="c3">第三项</label>
+                </p>
+              </fieldset>
+            </li>
+            <li class="button">
+              <button type="submit">Send your user_message</button>
+            </li>
+            <li>
+              <fieldset>
+                <legend>Fruit juice size</legend>
+                <p>
+                  <input type="radio" name="size" id="size_1" value="small" />
+                  <label for="size_1">Small</label>
+                </p>
+                <p>
+                  <input type="radio" name="size" id="size_2" value="medium" />
+                  <label for="size_2">Medium</label>
+                </p>
+                <p>
+                  <input type="radio" name="size" id="size_3" value="large" />
+                  <label for="size_3">Large</label>
+                </p>
+              </fieldset>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
